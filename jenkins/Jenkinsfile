@@ -8,10 +8,10 @@ pipeline {
 
     parameters {
         string(name: 'BRANCH_NAME', defaultValue: 'main', description: 'Branch to build from')
-        string(name: 'GIT_URL', defaultValue: 'https://github.com/optit-cloud-team/optit-lab-service.git', description: 'Git repository URL')
+        string(name: 'GIT_URL', defaultValue: 'https://github.com/raj-Optit/deploytest.git', description: 'Git repository URL')
         string(name: 'DEPLOYMENT_PATH', defaultValue: 'kubernetes/manifest/deployment.yaml', description: 'Path to the deployment YAML file')
         string(name: 'SERVICE_PATH', defaultValue: 'kubernetes/manifest/service.yaml', description: 'Path to the service YAML file')
-        string(name: 'NAMESPACE', defaultValue: 'optit-lab', description: 'Kubernetes namespace')
+        string(name: 'NAMESPACE', defaultValue: 'test', description: 'Kubernetes namespace')
         credentials(name: 'KUBE_CONFIG_CREDENTIAL', description: 'Jenkins credential for Kubernetes config file (kubeconfig)', defaultValue: '', required: true)
     }
 
@@ -21,8 +21,8 @@ pipeline {
                 script {
                     dir('cicd-repo') {
                         git branch: 'main',
-                            credentialsId: 'bkgit',
-                            url: 'https://github.com/optimize-it/CICD.git'
+                            credentialsId: 'test',
+                            url: 'https://github.com/raj-Optit/deploytest.git'
                     }
                 }
             }
