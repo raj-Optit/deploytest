@@ -19,7 +19,7 @@ pipeline {
         stage('Git Checkout CICD Repo') {
             steps {
                 script {
-                    dir('cicd-repo') {
+                    dir('deploytest') {
                         git branch: 'main',
                             credentialsId: 'test',
                             url: 'https://github.com/raj-Optit/deploytest.git'
