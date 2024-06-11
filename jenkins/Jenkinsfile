@@ -31,8 +31,8 @@ pipeline {
         stage('Load DSL') {
             steps {
                 script {
-                    gitCheckoutScript = load './cicd-repo/Jenkins/shared-libraries/vars/common/scm-util/git/GitCheckout.groovy'
-                    kubernetesDeployScript = load './cicd-repo/Jenkins/shared-libraries/vars/common/Deploy/KubernetesDeploy.groovy'
+                    gitCheckoutScript = load './deploytest/jenkins/shared-libraries/vars/common/scm-util/git/GitCheckout.groovy'
+                    kubernetesDeployScript = load './deploytest/jenkins/shared-libraries/vars/common/Deploy/KubernetesDeploy.groovy'
                 }
             }
         }
